@@ -93,6 +93,23 @@ button{cursor:pointer}
 .linkbtn{flex:none;border:1px solid var(--line);background:transparent;border-radius:99px;padding:8px 14px;font-size:14px;font-weight:600;min-height:40px}
 .linkbtn:hover{border-color:var(--gold)}
 
+
+/* tira de premios más grande */
+.prizes .wrap{padding-top:16px;padding-bottom:16px}
+.strip-in{gap:12px;animation-duration:120s}
+.th{width:78px;height:78px;border-radius:16px;background-size:34px}
+.th::after{top:11px;right:-17px;width:59px;height:8px}
+.th::before{width:23px;height:23px;top:3.5px;right:1px}
+.prizes .lbl b{font-size:19px}
+@media(max-width:600px){
+  .th{width:64px;height:64px;border-radius:14px;background-size:28px}
+  .th::after{top:9px;right:-14px;width:49px;height:6.5px}
+  .th::before{width:19px;height:19px;top:2.7px;right:1px}
+  .prizes .wrap{gap:12px}
+  .prizes .lbl{display:none}
+  .prizes .linkbtn{padding:8px 12px}
+}
+
 /* --- talonario --- */
 .band{padding:clamp(26px,4vw,52px) 0}
 .board{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr);gap:clamp(20px,3vw,40px);align-items:start}
@@ -270,7 +287,7 @@ td.num{text-align:right;white-space:nowrap}
     </div>
     <div class="facts">
       <div class="countdown" id="cd" aria-label="Tiempo para el sorteo"></div>
-      <div>
+      <div hidden>
         <div class="meterline"><span id="vendidosTxt">Cargando…</span><span id="libresTxt"></span></div>
         <div class="meter"><i id="meter"></i></div>
       </div>
